@@ -1,5 +1,7 @@
 package com.ruifelipe.todosimple.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -10,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -45,7 +48,8 @@ public class User {
                                                                               // ta no valor min ou max
     private String password;
 
-    // private List <Task> task = new ArrayList<task>();
+    @OneToMany
+    private List <Task> task = new ArrayList<Task>();
 
     public User() {
     }
