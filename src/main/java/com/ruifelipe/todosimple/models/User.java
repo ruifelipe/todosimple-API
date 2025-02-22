@@ -48,7 +48,7 @@ public class User {
                                                                               // ta no valor min ou max
     private String password;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List <Task> task = new ArrayList<Task>();
 
     public User() {
